@@ -1,0 +1,32 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .w-v14{
+    width: 14vw;
+  }
+
+  .link{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0.5rem;
+  }
+  .link:hover{
+    color: blue;
+  }
+
+  .image-menu{
+width: 2rem;
+  }
+
+  .toolbar{
+    height: 3.5rem;
+  }
