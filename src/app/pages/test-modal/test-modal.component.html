@@ -1,0 +1,29 @@
+<mat-card appearance="outlined">
+    <div class="d-flex align-items-between justify-content-between w-100 border-bottom border-1 p-1">
+        <p class="h5 mt-2">This is a test Modal</p>   
+        <button mat-flat-button color="warn" (click)="close()">
+            <fa-icon [icon]="faClose"></fa-icon>
+        </button>
+</div>
+<mat-card-content class="p-2">
+    <div class="d-flex flex-wrap gap-2">
+        <mat-form-field class="col-4">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name">
+          </mat-form-field>
+          <mat-form-field class="col-4">
+            <mat-label>Weight</mat-label>
+            <input matInput placeholder="Weight">
+          </mat-form-field>
+          <mat-form-field class="col-2">
+            <mat-label>Symbol</mat-label>
+            <input matInput placeholder="Symbol">
+          </mat-form-field>
+    </div>
+</mat-card-content>
+<div class="d-flex align-items-start justify-content-start w-100 p-1">
+    <button mat-flat-button color="primary">Save
+        <fa-icon [icon]="faSave"></fa-icon>
+    </button>
+</div>
+</mat-card>

@@ -9,9 +9,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MenuCardComponent } from "./shared/components/menu-card/menu-card.component";
 import { FirstMenuComponent } from './pages/first-menu/first-menu.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { TestModalComponent } from './pages/test-modal/test-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuCardComponent, FirstMenuComponent, DashboardComponent],
+  declarations: [AppComponent, MenuCardComponent, FirstMenuComponent, DashboardComponent, TestModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

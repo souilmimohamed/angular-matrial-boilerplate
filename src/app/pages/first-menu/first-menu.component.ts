@@ -2,7 +2,15 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
 import { Router } from "@angular/router";
-import { faArrowLeft, faPlus } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faPlus,
+  faPen,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
+import { MatDialog } from "@angular/material/dialog";
+import { TestModalComponent } from "../test-modal/test-modal.component";
+
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -16,7 +24,7 @@ export interface PeriodicElement {
 })
 export class FirstMenuComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  constructor(private router: Router) {}
+  constructor(private router: Router, public dialog: MatDialog) {}
   ngOnInit(): void {
     const ELEMENT_DATA: PeriodicElement[] = [
       { position: 1, name: "Hydrogen", weight: 1.0079, symbol: "H" },
@@ -36,7 +44,15 @@ export class FirstMenuComponent implements OnInit {
   }
   faArrowLeft = faArrowLeft;
   faPlus = faPlus;
-  displayedColumns: string[] = ["position", "name", "weight", "symbol"];
+  faPen = faPen;
+  faTrash = faTrash;
+  displayedColumns: string[] = [
+    "position",
+    "name",
+    "weight",
+    "symbol",
+    "actions",
+  ];
   dataSource: any;
   goBack() {
     this.router.navigate(["/"]);
@@ -44,5 +60,16 @@ export class FirstMenuComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(TestModalComponent, {
+      minWidth: "40vw",
+      minHeight: "24vh",
+      data: {},
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+    });
   }
 }
